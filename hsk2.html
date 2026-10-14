@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HSK 2 – Học từ vựng tiếng Trung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --snow:#F4F6F9;--paper:#FFFFFF;--ink:#1E2533;--muted:#5E6778;--line:#DCE2EA;
+  --crimson:#A11D35;--crimson-soft:#F7E8EB;--pine:#2E6B57;--pine-soft:#E4F1EB;--amber:#8E5A06;--amber-soft:#FBF1DD;--formula:#EEF2F7;
+  --vi:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --zh:"Noto Serif SC","Songti SC","STSong","SimSun","Source Han Serif SC",serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --snow:#161A22;--paper:#1F2430;--ink:#E7EAF0;--muted:#A3AABA;--line:#343B4A;--crimson:#E0566E;--crimson-soft:#3A2129;--pine:#6CC3A2;--pine-soft:#1D3530;--amber:#E3AE52;--amber-soft:#3A2F1B;--formula:#283040}}
+:root[data-theme="dark"]{--snow:#161A22;--paper:#1F2430;--ink:#E7EAF0;--muted:#A3AABA;--line:#343B4A;--crimson:#E0566E;--crimson-soft:#3A2129;--pine:#6CC3A2;--pine-soft:#1D3530;--amber:#E3AE52;--amber-soft:#3A2F1B;--formula:#283040}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--snow);color:var(--ink);font-family:var(--vi);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--crimson);outline-offset:2px;border-radius:4px}
+a{color:inherit}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar-in{max-width:880px;margin:0 auto;padding:10px clamp(16px,4vw,40px);display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.seal{flex:none;width:38px;height:38px;background:var(--crimson);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--zh);font-weight:700;font-size:18px;box-shadow:inset 0 0 0 3px var(--crimson),inset 0 0 0 4px rgba(255,255,255,.55)}
+.brand b{font-size:16px;line-height:1.2;display:block}.brand small{color:var(--muted);font-size:12px}
+.tog{text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font-size:13px}
+.tog[aria-pressed="true"]{background:var(--crimson);border-color:var(--crimson);color:#fff}
+main{max-width:880px;margin:0 auto;padding:28px clamp(16px,4vw,40px) 100px}
+h1{font-family:var(--zh);font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.2;margin:4px 0 2px;letter-spacing:1px}
+h2{font-size:20px;margin:0 0 10px}
+.muted{color:var(--muted)}
+.sum{display:flex;gap:28px;flex-wrap:wrap;margin:14px 0 26px}.sum div b{display:block;font-size:26px;line-height:1.1}.sum div span{font-size:13px;color:var(--muted)}
+.list{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--paper);overflow:hidden}
+.list li+li{border-top:1px solid var(--line)}
+.row{display:flex;align-items:center;gap:14px;padding:14px 16px;text-decoration:none}
+.row:hover{background:var(--formula)}
+.num{flex:none;width:34px;text-align:center;font-weight:600;color:var(--crimson)}
+.rt{flex:1;min-width:0}.rt .z{font-family:var(--zh);font-weight:600;font-size:18px}.rt .v{font-size:14px;color:var(--muted)}
+.chip{flex:none;font-size:12px;padding:3px 10px;border-radius:999px;background:var(--formula);color:var(--muted);white-space:nowrap}
+.chip.ok{background:var(--pine-soft);color:var(--pine)}.chip.part{background:var(--amber-soft);color:var(--amber)}
+.crumb{font-size:14px;margin-bottom:6px}.crumb a{color:var(--crimson);text-decoration:none}
+.head .py{margin:0;color:var(--muted)}.head .vt{margin:6px 0 0;font-size:17px}
+.tabs{display:flex;gap:4px;margin:24px 0 22px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{border:0;background:none;padding:10px 14px;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--crimson);border-bottom-color:var(--crimson);font-weight:600}
+.gp{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--crimson);border-radius:8px;padding:16px 18px;margin-bottom:16px}
+.gp h3{margin:0 0 8px;font-size:17px}
+.formula{display:inline-block;background:var(--formula);border-radius:6px;padding:4px 10px;font-family:var(--zh);font-size:16px;margin-bottom:8px}
+.gp p{margin:0 0 10px}
+.gex{background:var(--snow);border-radius:6px;padding:10px 12px}
+.z,.ans-zh{font-family:var(--zh);font-size:19px;font-weight:600}
+.y,.ans-py,.mc-py{color:var(--muted);font-size:14px}.v{font-size:15px}
+.speak{border:1px solid var(--line);background:var(--paper);border-radius:50%;width:32px;height:32px;margin-left:8px;vertical-align:middle;font-size:14px;line-height:1}
+.hide-py .y,.hide-py .bpy,.hide-py .ans-py,.hide-py .mc-py,.hide-py .pyw{display:none}
+ol.items{list-style:none;margin:0;padding:0}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.item.ok{border-color:var(--pine)}.item.near{border-color:var(--amber)}.item.no{border-color:var(--crimson)}
+.vs{font-weight:500;margin-bottom:8px}.vs .n{color:var(--crimson);font-weight:600;margin-right:8px}
+textarea{width:100%;border:1px solid var(--line);border-radius:6px;background:var(--snow);padding:10px 12px;font-family:var(--zh);font-size:18px;resize:vertical}
+textarea:disabled{opacity:.8}
+.res{margin-top:10px;font-size:14px}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:600;font-size:13px}
+.badge.ok{background:var(--pine-soft);color:var(--pine)}.badge.near{background:var(--amber-soft);color:var(--amber)}.badge.no{background:var(--crimson-soft);color:var(--crimson)}
+.cmp{margin:8px 0}.cmp .line{font-family:var(--zh);font-size:18px;margin:2px 0 8px}
+.x{text-decoration:line-through;color:var(--crimson)}.m{font-weight:700;background:var(--pine-soft);color:var(--pine)}
+.answer{margin-top:8px;padding:10px 12px;background:var(--snow);border-radius:6px}.ans-note{font-size:14px;margin-top:4px}
+.dw{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+@media (max-width:560px){.dw{grid-template-columns:1fr}}
+.dw div{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--pine);border-radius:8px;padding:12px 14px}
+.dw .w{font-family:var(--zh);font-size:22px;font-weight:700}
+.mc{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.mc-ctx{font-size:14px;color:var(--muted);margin-bottom:4px}
+.mc-q{font-family:var(--zh);font-size:19px;font-weight:600;margin-bottom:10px}.mc-q .n{color:var(--crimson);margin-right:8px;font-family:var(--vi);font-size:16px}
+.blank{display:inline-block;width:56px;border-bottom:2px solid var(--ink);margin:0 4px}
+.opts{display:flex;gap:10px;flex-wrap:wrap}
+.opt{border:1px solid var(--line);background:var(--snow);border-radius:8px;padding:8px 18px;font-family:var(--zh);font-size:18px}
+.opt[aria-pressed="true"]{border-color:var(--crimson);background:var(--crimson-soft)}
+.opt.right{border-color:var(--pine);background:var(--pine-soft)}.opt.wrong{border-color:var(--crimson);background:var(--crimson-soft)}
+.fb{margin-top:10px;font-size:14px;border-radius:6px;padding:10px 12px}.fb.ok{background:var(--pine-soft)}.fb.no{background:var(--crimson-soft)}
+.fb .full{font-family:var(--zh);font-size:18px;font-weight:600;margin-top:6px}
+.sbox{margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px}
+.score{display:flex;gap:28px;flex-wrap:wrap;margin:8px 0}.score b{display:block;font-size:26px;line-height:1.1}.score span{font-size:13px;color:var(--muted)}
+.btn{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:10px 18px;font-weight:600}
+.btn.primary{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.warn{color:var(--crimson)}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:34px}
+.pn a{text-decoration:none;border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:10px 16px;font-weight:500}
+.hint{color:var(--muted);font-size:14px;margin:0 0 14px}
+.sh{margin:34px 0 6px}.sh .zhs{font-family:var(--zh);color:var(--muted);font-weight:400;font-size:15px;margin-left:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.card.ok{border-color:var(--pine)}.card.bad{border-color:var(--crimson)}
+.face{text-align:center;min-height:100px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.face .n{position:absolute;left:0;top:0;font-size:13px;color:var(--muted)}
+.hz{font-family:var(--zh);font-weight:700;font-size:38px;line-height:1.2}.hz.sm{font-size:28px}
+.back .bpy{color:var(--muted)}.back .bvi{font-weight:600;color:var(--crimson)}.back .bex{font-family:var(--zh);font-size:16px;margin-top:6px}.back .bexv{font-size:13px;color:var(--muted)}
+.copts{display:grid;gap:6px}
+.topt{border:1px solid var(--line);background:var(--snow);border-radius:8px;padding:8px 12px;text-align:left}
+.copts .topt{font-size:14px}.opts .topt{font-family:var(--zh);font-size:18px}
+.topt[aria-pressed="true"]{border-color:var(--crimson);background:var(--crimson-soft)}
+.topt.right{border-color:var(--pine);background:var(--pine-soft)}.topt.wrong{border-color:var(--crimson);background:var(--crimson-soft)}
+.lt{font-family:var(--vi);font-size:12px;color:var(--muted);margin-right:6px}
+.bank{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 12px;padding:10px 12px;background:var(--amber-soft);border-radius:8px;font-family:var(--zh);font-size:18px}.bank b{font-family:var(--vi);font-size:12px;color:var(--amber);margin-right:4px}
+.passage{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--pine);border-radius:8px;padding:14px 16px;margin:18px 0 10px}
+.passage .pt{font-size:12px;font-weight:600;color:var(--pine);text-transform:uppercase;letter-spacing:.5px}.passage .pz{font-family:var(--zh);font-size:19px;line-height:1.9}
+.pvi{margin-bottom:14px;padding:10px 12px;background:var(--pine-soft);border-radius:6px;font-size:14px}
+.ansline{min-height:52px;border:1.5px dashed var(--line);border-radius:8px;padding:8px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.ansline.right{border-color:var(--pine);border-style:solid}.ansline.wrong{border-color:var(--crimson);border-style:solid}
+.pool{display:flex;flex-wrap:wrap;gap:8px}
+.pc{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:8px 14px;font-family:var(--zh);font-size:18px}
+.ansline .pc{background:var(--crimson-soft);border-color:var(--crimson)}
+.zhf{font-family:var(--zh)}
+ruby{ruby-position:over;ruby-align:center}
+rt{font-family:var(--vi);font-weight:400;font-size:max(10px,.48em);color:var(--muted);letter-spacing:0;line-height:1.1;font-style:normal}
+.hide-py rt{display:none}
+.nwlist{display:grid;gap:12px}
+.nw{display:grid;grid-template-columns:minmax(130px,180px) 1fr auto;gap:8px 18px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.nw.got{border-color:var(--pine);background:var(--pine-soft)}
+.nwh{font-family:var(--zh);font-weight:700;font-size:30px;line-height:1.6}
+.nwh .n{font-family:var(--vi);font-size:12px;color:var(--muted);font-weight:400;margin-right:6px;vertical-align:top}
+.nw .bvi{font-weight:600;color:var(--crimson)}
+.nw .bex{font-family:var(--zh);font-size:17px;margin-top:6px;line-height:1.9}
+.nw .bhv{font-size:13px;color:var(--amber);font-weight:500}
+.nw .bexv{font-size:13px;color:var(--muted)}
+.nw .btn{padding:7px 12px;font-size:13px;white-space:nowrap}.nw .btn.on{background:var(--pine);border-color:var(--pine);color:#fff}
+@media (max-width:640px){.nw{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.tab,.opt,.row{transition:background .15s,border-color .15s}}
+
+.tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.wc{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;position:relative}
+.wc.got{border-color:var(--pine);background:var(--pine-soft)}
+.wc .wn{position:absolute;left:10px;top:8px;font-size:12px;color:var(--muted)}
+.wf{border:0;background:none;width:100%;padding:22px 0 14px;text-align:center}
+.wf .hz{display:block}.wf small{color:var(--muted);font-size:12px}
+.wc .sp{position:absolute;right:8px;top:6px}
+.wb{text-align:center}.wb .hz{font-size:30px}
+.wb .bpy{color:var(--muted)}.wb .bhv{font-size:13px;color:var(--amber);font-weight:500}.wb .bvi{font-weight:600;color:var(--crimson);margin:2px 0 6px}
+.wb .bex{font-family:var(--zh);font-size:16px;text-align:left}.wb .bexv{font-size:13px;color:var(--muted);text-align:left}
+.wact{display:flex;gap:8px;margin-top:6px}.wact .btn{flex:1;padding:7px 8px;font-size:13px}
+.wact .btn.on{background:var(--pine);border-color:var(--pine);color:#fff}
+.search{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:11px 14px;font-size:16px;margin:0 0 14px}
+.sr{display:flex;gap:14px;align-items:baseline;padding:10px 14px;text-decoration:none;border-bottom:1px solid var(--line)}
+.sr:hover{background:var(--formula)}.sr .z{font-family:var(--zh);font-size:20px;font-weight:600;min-width:90px}.sr .v{font-size:14px}.sr .y{font-size:13px}.sr .b{margin-left:auto;font-size:12px;color:var(--crimson);white-space:nowrap}
+.sres{border:1px solid var(--line);border-radius:10px;background:var(--paper);overflow:hidden;margin-bottom:18px}
+.hint2{font-size:13px;color:var(--muted);margin-bottom:8px}.hint2 b{color:var(--ink);font-family:var(--zh);font-size:15px}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+  <a class="brand" href="#/"><span class="seal">汉</span><span><b>HSK 2</b><small>Từ vựng · bài tập · kiểm tra</small></span></a>
+  <a class="tog" href="./">Các cấp độ</a>
+  <button class="tog" id="togPy" aria-pressed="false">Ẩn pinyin</button>
+</div></header>
+<main id="app"></main>
+<script>
+const LV = {"lv":2,"words":[["吧","ba","","đi, nhé, nhỉ (đứng cuối câu)","请你帮我吧。","Qǐng nǐ bāng wǒ ba.","Xin bạn giúp tôi nhé.","吧",["请","你","帮","我","吧"]],["白","bái","","trắng","他的白色衬衫很漂亮。","Tā de báisè chènshān hěn piàoliang.","Áo sơ mi trắng của anh ấy rất đẹp.","",["他","的","白色","衬衫","很漂亮"]],["百","bǎi","","trăm","我们要买一百个苹果。","Wǒmen yào mǎi yī bǎi gè píngguǒ.","Chúng tôi muốn mua một trăm quả táo.","",["我们","要","买","一百个","苹果"]],["帮助","bāngzhù","","giúp đỡ","请你帮忙翻译这篇文章。","Qǐng nǐ bāngmáng fānyì zhè piān wénzhāng.","Xin bạn giúp dịch bài viết này.","",["请","你","帮忙","翻译","这","篇文章"]],["报纸","bàozhǐ","","báo","我每天都看报纸。","Wǒ měitiān dōu kàn bàozhǐ.","Tôi đọc báo mỗi ngày.","报纸",["我","每天","都","看","报纸"]],["比","bǐ","","so sánh","我的家比你的家大。","Wǒ de jiā bǐ nǐ de jiā dà.","Nhà của tôi lớn hơn nhà của bạn.","比",[]],["别","bié","","đừng, khác biệt","别忘带钥匙。","Bié wàng dài yàoshi.","Đừng quên mang theo chìa khóa.","别",["别","忘带","钥匙"]],["长","cháng","","dài","她的头发很长。","Tā de tóufǎ hěn cháng.","Tóc của cô ấy rất dài.","",["她","的","头发","很长"]],["唱歌","chànggē","","hát","我喜欢唱歌。","Wǒ xǐhuān chànggē.","Tôi thích hát.","唱歌",["我","喜欢","唱歌"]],["出","chū","","ra ngoài","我们出去玩吧。","Wǒmen chūqù wán ba.","Chúng ta ra ngoài chơi đi.","",["我们","出去","玩吧"]],["穿","chuān","","mặc","你穿的衣服很漂亮。","Nǐ chuān de yīfú hěn piàoliang.","Quần áo bạn mặc rất đẹp.","穿",["你","穿","的","衣服","很漂亮"]],["船","chuán","","thuyền","他坐在船上。","Tā zuò zài chuán shàng.","Anh ấy ngồi trên thuyền.","",["他","坐在","船上"]],["次","cì","","lần","这是我第一次来这里。","Zhè shì wǒ dì yī cì lái zhèlǐ.","Đây là lần đầu tiên tôi đến đây.","",["这","是","我","第一次","来","这里"]],["从","cóng","","từ, theo","他从早上工作到晚上。","Tā cóng zǎoshang gōngzuò dào wǎnshang.","Anh ấy làm việc từ sáng đến tối.","从",["他","从","早上","工作","到","晚上"]],["错","cuò","","sai","他做错了一个题。","Tā zuò cuòle yīgè tí.","Anh ấy đã làm sai một bài tập.","错",["他","做","错","了","一个","题"]],["打篮球","dǎ lánqiú","","chơi bóng rổ","他打篮球打得很好。","Tā dǎ lánqiú dǎ de hěn hǎo.","Anh ấy chơi bóng rổ rất giỏi.","打篮球",["他","打篮球","打得","很","好"]],["大家","dàjiā","","mọi người","大家都很高兴。","Dàjiā dōu hěn gāoxìng.","Mọi người đều rất vui.","大家",["大家","都","很","高兴"]],["但是","dànshì","","nhưng","我想去，但是没有时间。","Wǒ xiǎng qù, dànshì méiyǒu shíjiān.","Tôi muốn đi, nhưng không có thời gian.","但是",["我","想","去","但是","没有","时间"]],["到","dào","","đến","我们今天到学校了。","Wǒmen jīntiān dào xuéxiào le.","Hôm nay chúng tôi đã đến trường.","到",["我们","今天","到","学校","了"]],["得","děi","","phải, đạt được","你得努力学习。","Nǐ děi nǔlì xuéxí.","Bạn phải cố gắng học.","得",["你","得","努力学习"]],["等","děng","","đợi","我们等你来。","Wǒmen děng nǐ lái.","Chúng tôi đợi bạn đến.","等",["我们","等","你","来"]],["弟弟","dìdì","","em trai","弟弟在玩玩具。","Dìdì zài wán wánjù.","Em trai đang chơi đồ chơi.","弟弟",["弟弟","在","玩","玩具"]],["第一","dì yī","","đầu tiên","他是第一名。","Tā shì dì yī míng.","Anh ấy là người đứng đầu.","第一",["他","是","第一名"]],["懂","dǒng","","hiểu","我不懂这个问题。","Wǒ bù dǒng zhège wèntí.","Tôi không hiểu vấn đề này.","懂",["我","不","懂","这个","问题"]],["对","duì","","đúng, đối với","你对我很好。","Nǐ duì wǒ hěn hǎo.","Bạn đối xử tốt với tôi.","对",["你","对","我","很","好"]],["房间","fángjiān","","phòng","房间里很安静。","Fángjiān lǐ hěn ānjìng.","Trong phòng rất yên tĩnh.","房间",["房间","里","很","安静"]],["非常","fēicháng","","rất, cực kỳ","这道菜非常好吃。","Zhè dào cài fēicháng hǎochī.","Món ăn này rất ngon.","非常",["这","道菜","非常","好吃"]],["服务员","fúwùyuán","","nhân viên phục vụ","服务员请帮忙。","Fúwùyuán qǐng bāngmáng.","Nhân viên phục vụ, xin giúp đỡ.","服务员",["服务员","请","帮忙"]],["高","gāo","","cao","他很高。","Tā hěn gāo.","Anh ấy rất cao.","高",["他","很","高"]],["告诉","gàosù","","nói cho, thông báo","请告诉我答案。","Qǐng gàosù wǒ dá'àn.","Xin cho tôi biết đáp án.","告诉",["请","告诉","我","答案"]],["哥哥","gēge","","anh trai","哥哥在家里。","Gēge zài jiālǐ.","Anh trai đang ở nhà.","哥哥",["哥哥","在","家里"]],["给","gěi","","đưa cho, cho","请给我一本书。","Qǐng gěi wǒ yī běn shū.","Xin hãy đưa cho tôi một cuốn sách.","给",["请","给","我","一","本书"]],["公共汽车","gōnggòng qìchē","","xe buýt","公共汽车很方便。","Gōnggòng qìchē hěn fāngbiàn.","Xe buýt rất tiện lợi.","公共汽车",["公共汽车","很","方便"]],["公斤","gōngjīn","","kilogram (kg)","这个包十公斤。","Zhège bāo shí gōngjīn.","Cái túi này mười kilogram.","公斤",["这个","包","十公斤"]],["公司","gōngsī","","công ty","我在公司工作。","Wǒ zài gōngsī gōngzuò.","Tôi làm việc ở công ty.","公司",["我","在","公司","工作"]],["贵","guì","","đắt, quý","这件衣服很贵。","Zhè jiàn yīfú hěn guì.","Cái áo này rất đắt.","贵",["这件","衣服","很","贵"]],["过","guò","","qua, đi qua","请过安检门。","Qǐng guò ānjiǎn mén.\\","Mời đi qua cửa an ninh.","",[]],["还","hái","","vẫn, còn","我还想要一杯水。","Wǒ hái xiǎng yào yī bēi shuǐ.","Tôi còn muốn một cốc nước.","还",["我","还","想要","一杯","水"]],["孩子","háizi","","trẻ con","孩子们都在玩。","Háizimen dōu zài wán.","Những đứa trẻ đang chơi.","孩子",["孩子","们","都","在","玩"]],["好吃","hǎochī","","ngon","这道菜很好吃。","Zhè dào cài hěn hǎo chī.","Món ăn này rất ngon.","好吃",["这","道菜","很","好吃"]],["号","hào","","số (như số điện thoại, số nhà)","你的手机号是多少？","Nǐ de shǒujī hào shì duōshǎo?","Số điện thoại của bạn là bao nhiêu?","",["你","的","手机号","是","多少"]],["黑","hēi","","đen","我的车是黑色的。","Wǒ de chē shì hēisè de.","Xe của tôi màu đen.","",["我","的","车","是","黑色","的"]],["红","hóng","","đỏ","她喜欢红色的衣服。","Tā xǐhuān hóngsè de yīfú.","Cô ấy thích quần áo màu đỏ.","",["她","喜欢","红色","的","衣服"]],["欢迎","huānyíng","","hoan nghênh, chào mừng","欢迎你来我家。","Huānyíng nǐ lái wǒ jiā.","Chào mừng bạn đến nhà tôi.","欢迎",["欢迎","你","来","我家"]],["回答","huídá","","trả lời","请回答我的问题。","Qǐng huídá wǒ de wèntí.","Xin trả lời câu hỏi của tôi.","回答",["请","回答","我","的","问题"]],["机场","jīchǎng","","sân bay","机场离这里很近。","Jīchǎng lí zhèlǐ hěn jìn.","Sân bay gần đây.","机场",["机场","离","这里","很近"]],["鸡蛋","jīdàn","","trứng gà","我喜欢吃鸡蛋。","Wǒ xǐhuān chī jīdàn.","Tôi thích ăn trứng.","鸡蛋",["我","喜欢","吃","鸡蛋"]],["件","jiàn","","cái (dùng cho sự việc, quần áo)","这件衣服很好看。","Zhè jiàn yīfú hěn hǎokàn.","Cái áo này rất đẹp.","",["这件","衣服","很","好看"]],["教室","jiàoshì","","lớp học","学生们在教室里学习。","Xuéshēngmen zài jiàoshì lǐ xuéxí.","Học sinh đang học trong lớp học.","教室",["学生","们","在","教室","里","学习"]],["姐姐","jiějie","","chị gái","姐姐比我大三岁。","Jiějiě bǐ wǒ dà sān suì.","Chị gái lớn hơn tôi ba tuổi.","姐姐",["姐姐","比","我","大","三岁"]],["介绍","jièshào","","giới thiệu","请介绍一下你自己。","Qǐng jièshào yīxià nǐ zìjǐ.","Xin hãy giới thiệu về bản thân.","介绍",["请","介绍","一下","你","自己"]],["进","jìn","","vào","请进，别客气。","Qǐng jìn, bié kèqì.","Mời vào, đừng khách sáo.","进",["请","进","别","客气"]],["近","jìn","","gần","学校离我家很近。","Xuéxiào lí wǒ jiā hěn jìn.","Trường học gần nhà tôi.","",["学校","离","我家","很近"]],["就","jiù","","thì, ngay","他就住在我家旁边。","Tā jiù zhù zài wǒ jiā pángbiān.","Anh ấy sống ngay cạnh nhà tôi.","就",["他","就","住","在","我家","旁边"]],["觉得","juéde","","cảm thấy","我觉得今天很热。","Wǒ juéde jīntiān hěn rè.","Tôi cảm thấy hôm nay rất nóng.","觉得",["我","觉得","今天","很","热"]],["咖啡","kāfēi","","cà phê","我每天早上喝咖啡。","Wǒ měitiān zǎoshang hē kāfēi.","Tôi uống cà phê mỗi sáng.","咖啡",["我","每天","早上","喝咖啡"]],["开始","kāishǐ","","bắt đầu","我们现在开始上课。","Wǒmen xiànzài kāishǐ shàngkè.","Bây giờ chúng ta bắt đầu học.","开始",["我们","现在","开始","上课"]],["考试","kǎoshì","","thi","我准备好考试了。","Wǒ zhǔnbèi hǎo kǎoshì le.","Tôi đã chuẩn bị sẵn sàng cho kỳ thi.","考试",["我","准备","好","考试","了"]],["可能","kěnéng","","có thể","可能会下雨。","Kěnéng huì xiàyǔ.","Có thể sẽ mưa.","可能",["可能","会","下雨"]],["可以","kěyǐ","","có thể","你可以坐在这里。","Nǐ kěyǐ zuò zài zhèlǐ.","Bạn có thể ngồi ở đây.","可以",["你","可以","坐在","这里"]],["课","kè","","bài học","我们今天有三节课。","Wǒmen jīntiān yǒu sān jié kè.","Hôm nay chúng ta có ba tiết học.","",["我们","今天","有","三节课"]],["快","kuài","","nhanh","他跑得很快。","Tā pǎo de hěn kuài.","Anh ấy chạy rất nhanh.","",["他","跑","得","很快"]],["快乐","kuàilè","","vui vẻ","祝你生日快乐。","Zhù nǐ shēngrì kuàilè.","Chúc bạn sinh nhật vui vẻ.","快乐",["祝","你","生日快乐"]],["累","lèi","","mệt","我累了，想休息一下。","Wǒ lèile, xiǎng xiūxí yīxià.","Tôi mệt rồi, muốn nghỉ ngơi một chút.","",["我累","了","想","休息","一下"]],["离","lí","","cách (khoảng cách), rời","学校离我家不远。","Xuéxiào lí wǒ jiā bù yuǎn.","Trường học không xa nhà tôi.","离",["学校","离","我家","不远"]],["两","liǎng","","hai (khi đếm số lượng)","我有两个弟弟。","Wǒ yǒu liǎng gè dìdì.","Tôi có hai em trai.","",["我","有","两个","弟弟"]],["路","lù","","đường","这条路很长。","Zhè tiáo lù hěn cháng.","Con đường này rất dài.","路",["这条","路","很长"]],["旅游","lǚyóu","","du lịch","我喜欢旅游。","Wǒ xǐhuān lǚyóu.","Tôi thích du lịch.","旅游",["我","喜欢","旅游"]],["卖","mài","","bán","他在商店里卖东西。","Tā zài shāngdiàn lǐ mài dōngxī.","Anh ấy bán hàng trong cửa hàng.","",["他","在","商店","里","卖东西"]],["慢","màn","","chậm","他走得很慢。","Tā zǒu de hěn màn.","Anh ấy đi rất chậm.","",["他","走","得","很慢"]],["忙","máng","","bận","我今天很忙。","Wǒ jīntiān hěn máng.","Hôm nay tôi rất bận.","忙",["我","今天","很","忙"]],["每","měi","","mỗi","每个人都有机会。","Měi gèrén dōu yǒu jīhuì.","Mỗi người đều có cơ hội.","",["每个","人","都","有","机会"]],["妹妹","mèimei","","em gái","妹妹在唱歌。","Mèimei zài chànggē.","Em gái đang hát.","妹妹",["妹妹","在","唱歌"]],["门","mén","","cửa","他站在门口。","Tā zhàn zài ménkǒu.","Anh ấy đứng ở cửa.","",["他","站","在","门口"]],["男人","nánrén","","đàn ông","那个男人很高。","Nàgè nánrén hěn gāo.","Người đàn ông đó rất cao.","男人",["那个","男人","很","高"]],["您","nín","","bạn (dùng lịch sự)","您好，请进。","Nín hǎo, qǐng jìn.","Xin chào, mời vào.","",["您好","请","进"]],["牛奶","niúnǎi","","sữa bò","我每天早上喝牛奶。","Wǒ měitiān zǎoshang hē niúnǎi.","Tôi uống sữa mỗi sáng.","牛奶",["我","每天","早上","喝牛奶"]],["女人","nǚrén","","phụ nữ","那个女人是我妈妈。","Nàgè nǚrén shì wǒ māma.","Người phụ nữ đó là mẹ tôi.","女人",["那个","女人","是","我","妈妈"]],["旁边","pángbiān","","bên cạnh","学校在我家旁边。","Xuéxiào zài wǒ jiā pángbiān.","Trường học ở cạnh nhà tôi.","旁边",["学校","在","我家","旁边"]],["跑步","pǎobù","","chạy bộ","我每天早上跑步。","Wǒ měitiān zǎoshang pǎobù.","Tôi chạy bộ mỗi sáng.","跑步",["我","每天","早上","跑步"]],["便宜","piányí","","rẻ","这件衣服很便宜。","Zhè jiàn yīfú hěn piányí.","Cái áo này rất rẻ.","便宜",["这件","衣服","很","便宜"]],["票","piào","","vé","我买了两张电影票。","Wǒ mǎile liǎng zhāng diànyǐng piào.","Tôi đã mua hai vé xem phim.","",["我","买","了","两张","电影票"]],["妻子","qīzi","","vợ","这是我的妻子。","Zhè shì wǒ de qīzi.","Đây là vợ tôi.","妻子",["这","是","我","的","妻子"]],["起床","qǐchuáng","","dậy (rời khỏi giường)","我每天六点起床。","Wǒ měitiān liù diǎn qǐchuáng.","Tôi thức dậy lúc sáu giờ mỗi ngày.","起床",["我","每天","六点","起床"]],["千","qiān","","nghìn","我有一千块钱。","Wǒ yǒu yīqiān kuài qián.","Tôi có một ngàn đồng.","",["我","有","一千块","钱"]],["晴","qíng","","nắng, quang đãng","今天是晴天。","Jīntiān shì qíngtiān.","Hôm nay trời nắng.","",["今天","是","晴天"]],["去年","qùnián","","năm ngoái","我去年去了中国。","Wǒ qùnián qùle zhōngguó.","Năm ngoái tôi đã đi Trung Quốc.","去年",["我","去年","去","了","中国"]],["让","ràng","","để, làm cho, nhường","请让他进来。","Qǐng ràng tā jìnlái.","Xin hãy để anh ấy vào.","让",["请","让","他","进来"]],["上班","shàngbān","","đi làm","我每天八点上班。","Wǒ měitiān bā diǎn shàngbān.","Tôi đi làm lúc tám giờ mỗi ngày.","上班",["我","每天","八点","上班"]],["身体","shēntǐ","","cơ thể","你的身体怎么样？","Nǐ de shēntǐ zěnme yàng?","Sức khỏe của bạn thế nào?","身体",["你","的","身体","怎么样"]],["生病","shēngbìng","","bị bệnh","他生病了，不能来上课。","Tā shēngbìng le, bùnéng lái shàngkè.","Anh ấy bị ốm, không thể đến lớp.","生病",["他","生病","了","不能","来","上课"]],["生日","shēngrì","","sinh nhật","今天是我的生日。","Jīntiān shì wǒ de shēngrì.","Hôm nay là sinh nhật của tôi.","生日",["今天","是","我","的","生日"]],["时间","shíjiān","","thời gian","现在我没有时间。","Xiànzài wǒ méiyǒu shíjiān.","Bây giờ tôi không có thời gian.","时间",["现在","我","没有","时间"]],["事情","shìqíng","","việc","你在做什么事情？","Nǐ zài zuò shénme shìqíng?","Bạn đang làm việc gì vậy?","事情",["你","在","做","什么","事情"]],["手表","shǒubiǎo","","đồng hồ","这块手表很贵。","Zhè kuài shǒubiǎo hěn guì.","Chiếc đồng hồ này rất đắt.","手表",["这块","手表","很","贵"]],["手机","shǒujī","","điện thoại di động","我的手机没电了。","Wǒ de shǒujī méi diàn le.","Điện thoại của tôi hết pin rồi.","手机",["我","的","手机","没电","了"]],["送","sòng","","tặng","我送你一本书。","Wǒ sòng nǐ yī běn shū.","Tôi tặng bạn một quyển sách.","送",["我","送","你","一","本书"]],["所以","suǒyǐ","","vì vậy","他很累，所以休息了。","Tā hěn lèi, suǒyǐ xiūxí le.","Anh ấy rất mệt, nên đã nghỉ ngơi rồi.","所以",["他","很","累","所以","休息","了"]],["它","tā","","nó (cho vật, động vật)","它是一只可爱的小猫。","Tā shì yī zhī kě'ài de xiǎo māo.","Nó là một chú mèo đáng yêu.","它",["它","是","一只","可爱","的","小猫"]],["踢足球","tī zúqiú","","đá bóng","我们一起踢足球吧。","Wǒmen yīqǐ tī zúqiú ba.","Chúng ta cùng chơi đá bóng nhé.","踢足球",["我们","一起","踢足球","吧"]],["题","tí","","câu hỏi, đề bài","这道题很难。","Zhè dào tí hěn nán.","Câu hỏi này rất khó.","",["这道题","很","难"]],["跳舞","tiàowǔ","","nhảy múa","我喜欢跳舞。","Wǒ xǐhuān tiàowǔ.","Tôi thích nhảy múa.","跳舞",["我","喜欢","跳舞"]],["外","wài","","ngoài","他在外面等你。","Tā zài wàimiàn děng nǐ.","Anh ấy đang đợi bạn ở bên ngoài.","",["他","在","外面","等","你"]],["玩","wán","","chơi","小孩子们在玩游戏。","Xiǎo háizimen zài wán yóuxì.","Các em nhỏ đang chơi trò chơi.","",["小孩子","们","在","玩游戏"]],["完","wán","","xong, hoàn thành","我已经做完了作业。","Wǒ yǐjīng zuò wán le zuòyè.","Tôi đã làm xong bài tập.","完",["我","已经","做","完","了","作业"]],["晚上","wǎnshàng","","buổi tối","我晚上九点睡觉。","Wǒ wǎnshàng jiǔ diǎn shuìjiào.","Tôi đi ngủ lúc chín giờ tối.","晚上",["我","晚上","九点","睡觉"]],["为什么","wèishénme","","tại sao","你为什么不来？","Nǐ wèishéme bù lái?","Tại sao bạn không đến?","为什么",["你","为什么","不","来"]],["问","wèn","","hỏi","请问你叫什么名字？","Qǐng wèn nǐ jiào shénme míngzì?","Xin hỏi bạn tên là gì?","",["请问","你","叫","什么","名字"]],["问题","wèntí","","vấn đề","这个问题很重要。","Zhège wèntí hěn zhòngyào.","Vấn đề này rất quan trọng.","问题",["这个","问题","很","重要"]],["西瓜","xīguā","","dưa hấu","我喜欢吃西瓜。","Wǒ xǐhuān chī xīguā.","Tôi thích ăn dưa hấu.","西瓜",["我","喜欢","吃","西瓜"]],["希望","xīwàng","","hy vọng","我希望你能来。","Wǒ xīwàng nǐ néng lái.","Tôi hy vọng bạn có thể đến.","希望",["我","希望","你","能","来"]],["洗","xǐ","","rửa","请洗手。","Qǐng xǐ shǒu.","Xin rửa tay.","",[]],["向","xiàng","","hướng về, đối với","向左走。","Xiàng zuǒ zǒu.","Đi về phía bên trái.","",[]],["小时","xiǎoshí","","tiếng đồng hồ","我每天学习一个小时。","Wǒ měitiān xuéxí yī gè xiǎoshí.","Tôi học một tiếng mỗi ngày.","小时",["我","每天","学习","一个","小时"]],["笑","xiào","","cười","他在笑什么？","Tā zài xiào shénme?","Anh ấy đang cười gì vậy?","笑",["他","在","笑","什么"]],["新","xīn","","mới","我有一个新手机。","Wǒ yǒu yī gè xīn shǒujī.","Tôi có một chiếc điện thoại mới.","",["我","有","一个","新手机"]],["姓","xìng","","họ","你姓什么？","Nǐ xìng shénme?","Họ của bạn là gì?","姓",["你","姓","什么"]],["休息","xiūxi","","nghỉ ngơi","我累了，需要休息。","Wǒ lèile, xūyào xiūxí.","Tôi mệt rồi, cần nghỉ ngơi.","休息",["我累","了","需要","休息"]],["雪","xuě","","tuyết","明天会下雪。","Míngtiān huì xià xuě.","Ngày mai sẽ có tuyết rơi.","",["明天","会","下雪"]],["颜色","yánsè","","màu sắc","你喜欢什么颜色？","Nǐ xǐhuān shénme yánsè?","Bạn thích màu gì?","颜色",["你","喜欢","什么","颜色"]],["眼睛","yǎnjing","","mắt","他的眼睛很大。","Tā de yǎnjīng hěn dà.","Mắt của anh ấy rất to.","眼睛",["他","的","眼睛","很大"]],["羊肉","yángròu","","thịt cừu","我喜欢吃羊肉。","Wǒ xǐhuān chī yángròu.","Tôi thích ăn thịt cừu.","羊肉",["我","喜欢","吃","羊肉"]],["要","yào","","muốn, cần","我要一杯水。","Wǒ yào yī bēi shuǐ.","Tôi muốn một cốc nước.","",["我要","一杯","水"]],["药","yào","","thuốc","我生病了，要吃药。","Wǒ shēngbìng le, yào chī yào.","Tôi bị ốm, cần uống thuốc.","",["我","生病","了","要","吃药"]],["也","yě","","cũng","他也喜欢游泳。","Tā yě xǐhuān yóuyǒng.","Anh ấy cũng thích bơi lội.","也",["他","也","喜欢","游泳"]],["已经","yǐjīng","","đã","我已经吃过饭了。","Wǒ yǐjīng chī guò fàn le.","Tôi đã ăn cơm rồi.","已经",["我","已经","吃过饭","了"]],["一起","yìqǐ","","cùng nhau","我们一起去看电影吧。","Wǒmen yīqǐ qù kàn diànyǐng ba.","Chúng ta cùng đi xem phim nhé.","一起",["我们","一起","去","看","电影吧"]],["意思","yìsi","","ý nghĩa","这是什么意思？","Zhè shì shénme yìsi?","Điều này có nghĩa là gì?","意思",["这是","什么","意思"]],["阴","yīn","","âm u, trời nhiều mây","今天是阴天。","Jīntiān shì yīntiān.","Hôm nay là ngày trời âm u.","",["今天","是","阴天"]],["因为","yīnwèi","","vì","因为下雨，我不去跑步。","Yīnwèi xiàyǔ, wǒ bú qù pǎobù.","Vì trời mưa, tôi không đi chạy bộ.","因为",["因为","下雨","我","不","去","跑步"]],["游泳","yóuyǒng","","bơi","我喜欢游泳。","Wǒ xǐhuān yóuyǒng.","Tôi thích bơi lội.","游泳",["我","喜欢","游泳"]],["右边","yòubiān","","bên phải","他坐在我右边。","Tā zuò zài wǒ yòubiān.","Anh ấy ngồi bên phải tôi.","右边",["他","坐在","我","右边"]],["鱼","yú","","cá","我们晚饭吃鱼。","Wǒmen wǎnfàn chī yú.","Chúng tôi ăn cá vào bữa tối.","鱼",["我们","晚饭","吃","鱼"]],["元","yuán","","Đồng (đơn vị tiền tệ)","这本书要十元。","Zhè běn shū yào shí yuán.","Quyển sách này giá mười đồng.","",["这","本书","要","十元"]],["远","yuǎn","","xa","他家离学校很远。","Tā jiā lí xuéxiào hěn yuǎn.","Nhà anh ấy cách xa trường học.","远",["他家","离","学校","很","远"]],["运动","yùndòng","","vận","我每天都运动。","Wǒ měitiān dōu yùndòng.","Tôi tập thể dục mỗi ngày.","运动",["我","每天","都","运动"]],["再","zài","","lại","请再说一遍。","Qǐng zài shuō yī biàn.","Xin hãy nói lại một lần nữa.","",["请","再说","一遍"]],["早上","zǎoshàng","","buổi sáng","我每天早上六点起床。","Wǒ měitiān zǎoshang liù diǎn qǐchuáng.","Tôi dậy lúc sáu giờ sáng mỗi ngày.","早上",["我","每天","早上","六点","起床"]],["张","zhāng","","tờ, bức (dùng cho vật phẳng, giấy, tranh, bàn)","这是一张照片。","Zhè shì yī zhāng zhàopiàn.","Đây là một tấm ảnh.","",["这是","一张","照片"]],["丈夫","zhàngfu","","chồng","这是我的丈夫。","Zhè shì wǒ de zhàngfu.","Đây là chồng tôi.","丈夫",["这","是","我","的","丈夫"]],["找","zhǎo","","tìm","我在找我的钥匙。","Wǒ zài zhǎo wǒ de yàoshi.","Tôi đang tìm chìa khóa của mình.","找",["我","在","找","我","的","钥匙"]],["着","zhe","","đang (dùng để chỉ trạng thái hiện tại)","他在吃着饭呢。","Tā zài chī zhe fàn ne.","Anh ấy đang ăn cơm.","着",["他","在","吃","着","饭","呢"]],["真","zhēn","","thật","这个苹果真好吃。","Zhège píngguǒ zhēn hào chī.","Quả táo này thật ngon.","真",["这个","苹果","真","好吃"]],["正在","zhèngzài","","đang","妈妈正在打电话。","Māma zhèngzài dǎ diànhuà.","Mẹ đang gọi điện thoại.","正在",["妈妈","正在","打电话"]],["知道","zhīdào","","biết","我知道他是谁。","Wǒ zhīdào tā shì shéi.","Tôi biết anh ấy là ai.","知道",["我","知道","他","是","谁"]],["准备","zhǔnbèi","","chuẩn bị","我正在准备考试。","Wǒ zhèngzài zhǔnbèi kǎoshì.","Tôi đang chuẩn bị cho kỳ thi.","准备",["我","正在","准备","考试"]],["自行车","zìxíngchē","","xe đạp","他骑自行车去上班。","Tā qí zìxíngchē qù shàngbān.","Anh ấy đi làm bằng xe đạp.","自行车",["他","骑","自行车","去","上班"]],["走","zǒu","","đi","我们一起走吧。","Wǒmen yīqǐ zǒu ba.","Chúng ta cùng đi nhé.","走",["我们","一起","走","吧"]],["最","zuì","","nhất (so sánh nhất)","这是我最喜欢的书。","Zhè shì wǒ zuì xǐhuān de shū.","Đây là cuốn sách tôi thích nhất.","最",["这","是","我","最","喜欢","的","书"]],["左边","zuǒbiān","","bên trái","他坐在我左边。","Tā zuò zài wǒ zuǒbiān.","Anh ấy ngồi bên trái tôi.","左边",["他","坐在","我","左边"]]],"ls":[0,25,50,75,100,125,150],"sel":[{"tr":[3,4,7,9,11,12,13,14,18,23],"fc":[0,5,7,9,11,13,15,18,20,21],"fi":[4,6,10,13,14,15,17,21,23,24],"od":[9,14,19,20,23]},{"tr":[2,10,13,15,17,18,20,21,23,24],"fc":[8,9,10,11,12,13,14,18,20,22],"fi":[0,3,5,6,8,13,14,19,23,24],"od":[0,1,8,12,15]},{"tr":[2,5,8,9,10,14,18,20,22,23],"fc":[0,3,4,9,12,13,14,15,17,19],"fi":[0,1,3,5,6,7,8,17,22,24],"od":[2,7,13,16,22]},{"tr":[0,1,3,5,7,10,20,21,23,24],"fc":[1,2,3,7,9,12,17,19,21,24],"fi":[1,2,4,8,11,15,16,18,21,22],"od":[2,3,11,12,20]},{"tr":[0,2,3,4,5,6,8,12,20,22],"fc":[1,5,7,9,12,13,16,20,21,24],"fi":[1,4,6,8,10,13,14,16,17,19],"od":[1,9,17,18,20]},{"tr":[0,3,6,8,11,14,16,18,22,23],"fc":[3,5,6,8,15,16,17,21,22,24],"fi":[0,1,2,5,7,10,18,19,20,24],"od":[0,4,16,18,21]}]};
+const PYS = {"吧":"ba","请你帮我吧。":"qǐng nǐ bāng wǒ ba","白":"bái","他的白色衬衫很漂亮。":"tā de bái sè chèn shān hěn piào liang","百":"bǎi","我们要买一百个苹果。":"wǒ men yào mǎi yī bǎi gè píng guǒ","帮助":"bāng zhù","请你帮忙翻译这篇文章。":"qǐng nǐ bāng máng fān yì zhè piān wén zhāng","报纸":"bào zhǐ","我每天都看报纸。":"wǒ měi tiān dōu kàn bào zhǐ","比":"bǐ","我的家比你的家大。":"wǒ de jiā bǐ nǐ de jiā dà","别":"bié","别忘带钥匙。":"bié wàng dài yào shi","长":"cháng","她的头发很长。":"tā de tóu fà hěn cháng","唱歌":"chàng gē","我喜欢唱歌。":"wǒ xǐ huān chàng gē","出":"chū","我们出去玩吧。":"wǒ men chū qù wán ba","穿":"chuān","你穿的衣服很漂亮。":"nǐ chuān de yī fú hěn piào liang","船":"chuán","他坐在船上。":"tā zuò zài chuán shàng","次":"cì","这是我第一次来这里。":"zhè shì wǒ dì yī cì lái zhè lǐ","从":"cóng","他从早上工作到晚上。":"tā cóng zǎo shang gōng zuò dào wǎn shang","错":"cuò","他做错了一个题。":"tā zuò cuò le yī gè tí","打篮球":"dǎ lán qiú","他打篮球打得很好。":"tā dǎ lán qiú dǎ de hěn hǎo","大家":"dà jiā","大家都很高兴。":"dà jiā dōu hěn gāo xìng","但是":"dàn shì","我想去，但是没有时间。":"wǒ xiǎng qù dàn shì méi yǒu shí jiān","到":"dào","我们今天到学校了。":"wǒ men jīn tiān dào xué xiào le","得":"děi","你得努力学习。":"nǐ děi nǔ lì xué xí","等":"děng","我们等你来。":"wǒ men děng nǐ lái","弟弟":"dì dì","弟弟在玩玩具。":"dì dì zài wán wán jù","第一":"dì yī","他是第一名。":"tā shì dì yī míng","懂":"dǒng","我不懂这个问题。":"wǒ bù dǒng zhè ge wèn tí","对":"duì","你对我很好。":"nǐ duì wǒ hěn hǎo","房间":"fáng jiān","房间里很安静。":"fáng jiān lǐ hěn ān jìng","非常":"fēi cháng","这道菜非常好吃。":"zhè dào cài fēi cháng hǎo chī","服务员":"fú wù yuán","服务员请帮忙。":"fú wù yuán qǐng bāng máng","高":"gāo","他很高。":"tā hěn gāo","告诉":"gào sù","请告诉我答案。":"qǐng gào sù wǒ dá àn","哥哥":"gē ge","哥哥在家里。":"gē ge zài jiā lǐ","给":"gěi","请给我一本书。":"qǐng gěi wǒ yī běn shū","公共汽车":"gōng gòng qì chē","公共汽车很方便。":"gōng gòng qì chē hěn fāng biàn","公斤":"gōng jīn","这个包十公斤。":"zhè ge bāo shí gōng jīn","公司":"gōng sī","我在公司工作。":"wǒ zài gōng sī gōng zuò","贵":"guì","这件衣服很贵。":"zhè jiàn yī fú hěn guì","过":"guò","请过安检门。":"qǐng guò ān jiǎn mén","还":"hái","我还想要一杯水。":"wǒ hái xiǎng yào yī bēi shuǐ","孩子":"hái zi","孩子们都在玩。":"hái zi men dōu zài wán","好吃":"hǎo chī","这道菜很好吃。":"zhè dào cài hěn hǎo chī","号":"hào","你的手机号是多少？":"nǐ de shǒu jī hào shì duō shǎo","黑":"hēi","我的车是黑色的。":"wǒ de chē shì hēi sè de","红":"hóng","她喜欢红色的衣服。":"tā xǐ huān hóng sè de yī fú","欢迎":"huān yíng","欢迎你来我家。":"huān yíng nǐ lái wǒ jiā","回答":"huí dá","请回答我的问题。":"qǐng huí dá wǒ de wèn tí","机场":"jī chǎng","机场离这里很近。":"jī chǎng lí zhè lǐ hěn jìn","鸡蛋":"jī dàn","我喜欢吃鸡蛋。":"wǒ xǐ huān chī jī dàn","件":"jiàn","这件衣服很好看。":"zhè jiàn yī fú hěn hǎo kàn","教室":"jiào shì","学生们在教室里学习。":"xué shēng men zài jiào shì lǐ xué xí","姐姐":"jiě jie","姐姐比我大三岁。":"jiě jiě bǐ wǒ dà sān suì","介绍":"jiè shào","请介绍一下你自己。":"qǐng jiè shào yī xià nǐ zì jǐ","进":"jìn","请进，别客气。":"qǐng jìn bié kè qì","近":"jìn","学校离我家很近。":"xué xiào lí wǒ jiā hěn jìn","就":"jiù","他就住在我家旁边。":"tā jiù zhù zài wǒ jiā páng biān","觉得":"jué de","我觉得今天很热。":"wǒ jué de jīn tiān hěn rè","咖啡":"kā fēi","我每天早上喝咖啡。":"wǒ měi tiān zǎo shang hē kā fēi","开始":"kāi shǐ","我们现在开始上课。":"wǒ men xiàn zài kāi shǐ shàng kè","考试":"kǎo shì","我准备好考试了。":"wǒ zhǔn bèi hǎo kǎo shì le","可能":"kě néng","可能会下雨。":"kě néng huì xià yǔ","可以":"kě yǐ","你可以坐在这里。":"nǐ kě yǐ zuò zài zhè lǐ","课":"kè","我们今天有三节课。":"wǒ men jīn tiān yǒu sān jié kè","快":"kuài","他跑得很快。":"tā pǎo de hěn kuài","快乐":"kuài lè","祝你生日快乐。":"zhù nǐ shēng rì kuài lè","累":"lèi","我累了，想休息一下。":"wǒ lèi le xiǎng xiū xī yī xià","离":"lí","学校离我家不远。":"xué xiào lí wǒ jiā bù yuǎn","两":"liǎng","我有两个弟弟。":"wǒ yǒu liǎng gè dì dì","路":"lù","这条路很长。":"zhè tiáo lù hěn cháng","旅游":"lǚ yóu","我喜欢旅游。":"wǒ xǐ huān lǚ yóu","卖":"mài","他在商店里卖东西。":"tā zài shāng diàn lǐ mài dōng xī","慢":"màn","他走得很慢。":"tā zǒu de hěn màn","忙":"máng","我今天很忙。":"wǒ jīn tiān hěn máng","每":"měi","每个人都有机会。":"měi gè rén dōu yǒu jī huì","妹妹":"mèi mei","妹妹在唱歌。":"mèi mei zài chàng gē","门":"mén","他站在门口。":"tā zhàn zài mén kǒu","男人":"nán rén","那个男人很高。":"nà gè nán rén hěn gāo","您":"nín","您好，请进。":"nín hǎo qǐng jìn","牛奶":"niú nǎi","我每天早上喝牛奶。":"wǒ měi tiān zǎo shang hē niú nǎi","女人":"nǚ rén","那个女人是我妈妈。":"nà gè nǚ rén shì wǒ mā ma","旁边":"páng biān","学校在我家旁边。":"xué xiào zài wǒ jiā páng biān","跑步":"pǎo bù","我每天早上跑步。":"wǒ měi tiān zǎo shang pǎo bù","便宜":"pián yí","这件衣服很便宜。":"zhè jiàn yī fú hěn pián yí","票":"piào","我买了两张电影票。":"wǒ mǎi le liǎng zhāng diàn yǐng piào","妻子":"qī zi","这是我的妻子。":"zhè shì wǒ de qī zi","起床":"qǐ chuáng","我每天六点起床。":"wǒ měi tiān liù diǎn qǐ chuáng","千":"qiān","我有一千块钱。":"wǒ yǒu yī qiān kuài qián","晴":"qíng","今天是晴天。":"jīn tiān shì qíng tiān","去年":"qù nián","我去年去了中国。":"wǒ qù nián qù le zhōng guó","让":"ràng","请让他进来。":"qǐng ràng tā jìn lái","上班":"shàng bān","我每天八点上班。":"wǒ měi tiān bā diǎn shàng bān","身体":"shēn tǐ","你的身体怎么样？":"nǐ de shēn tǐ zěn me yàng","生病":"shēng bìng","他生病了，不能来上课。":"tā shēng bìng le bù néng lái shàng kè","生日":"shēng rì","今天是我的生日。":"jīn tiān shì wǒ de shēng rì","时间":"shí jiān","现在我没有时间。":"xiàn zài wǒ méi yǒu shí jiān","事情":"shì qíng","你在做什么事情？":"nǐ zài zuò shén me shì qíng","手表":"shǒu biǎo","这块手表很贵。":"zhè kuài shǒu biǎo hěn guì","手机":"shǒu jī","我的手机没电了。":"wǒ de shǒu jī méi diàn le","送":"sòng","我送你一本书。":"wǒ sòng nǐ yī běn shū","所以":"suǒ yǐ","他很累，所以休息了。":"tā hěn lèi suǒ yǐ xiū xī le","它":"tā","它是一只可爱的小猫。":"tā shì yī zhī kě ài de xiǎo māo","踢足球":"tī zú qiú","我们一起踢足球吧。":"wǒ men yī qǐ tī zú qiú ba","题":"tí","这道题很难。":"zhè dào tí hěn nán","跳舞":"tiào wǔ","我喜欢跳舞。":"wǒ xǐ huān tiào wǔ","外":"wài","他在外面等你。":"tā zài wài miàn děng nǐ","玩":"wán","小孩子们在玩游戏。":"xiǎo hái zi men zài wán yóu xì","完":"wán","我已经做完了作业。":"wǒ yǐ jīng zuò wán le zuò yè","晚上":"wǎn shàng","我晚上九点睡觉。":"wǒ wǎn shàng jiǔ diǎn shuì jiào","为什么":"wèi shén me","你为什么不来？":"nǐ wèi shén me bù lái","问":"wèn","请问你叫什么名字？":"qǐng wèn nǐ jiào shén me míng zì","问题":"wèn tí","这个问题很重要。":"zhè ge wèn tí hěn zhòng yào","西瓜":"xī guā","我喜欢吃西瓜。":"wǒ xǐ huān chī xī guā","希望":"xī wàng","我希望你能来。":"wǒ xī wàng nǐ néng lái","洗":"xǐ","请洗手。":"qǐng xǐ shǒu","向":"xiàng","向左走。":"xiàng zuǒ zǒu","小时":"xiǎo shí","我每天学习一个小时。":"wǒ měi tiān xué xí yī gè xiǎo shí","笑":"xiào","他在笑什么？":"tā zài xiào shén me","新":"xīn","我有一个新手机。":"wǒ yǒu yī gè xīn shǒu jī","姓":"xìng","你姓什么？":"nǐ xìng shén me","休息":"xiū xi","我累了，需要休息。":"wǒ lèi le xū yào xiū xī","雪":"xuě","明天会下雪。":"míng tiān huì xià xuě","颜色":"yán sè","你喜欢什么颜色？":"nǐ xǐ huān shén me yán sè","眼睛":"yǎn jing","他的眼睛很大。":"tā de yǎn jīng hěn dà","羊肉":"yáng ròu","我喜欢吃羊肉。":"wǒ xǐ huān chī yáng ròu","要":"yào","我要一杯水。":"wǒ yào yī bēi shuǐ","药":"yào","我生病了，要吃药。":"wǒ shēng bìng le yào chī yào","也":"yě","他也喜欢游泳。":"tā yě xǐ huān yóu yǒng","已经":"yǐ jīng","我已经吃过饭了。":"wǒ yǐ jīng chī guò fàn le","一起":"yì qǐ","我们一起去看电影吧。":"wǒ men yī qǐ qù kàn diàn yǐng ba","意思":"yì si","这是什么意思？":"zhè shì shén me yì si","阴":"yīn","今天是阴天。":"jīn tiān shì yīn tiān","因为":"yīn wèi","因为下雨，我不去跑步。":"yīn wèi xià yǔ wǒ bú qù pǎo bù","游泳":"yóu yǒng","我喜欢游泳。":"wǒ xǐ huān yóu yǒng","右边":"yòu biān","他坐在我右边。":"tā zuò zài wǒ yòu biān","鱼":"yú","我们晚饭吃鱼。":"wǒ men wǎn fàn chī yú","元":"yuán","这本书要十元。":"zhè běn shū yào shí yuán","远":"yuǎn","他家离学校很远。":"tā jiā lí xué xiào hěn yuǎn","运动":"yùn dòng","我每天都运动。":"wǒ měi tiān dōu yùn dòng","再":"zài","请再说一遍。":"qǐng zài shuō yī biàn","早上":"zǎo shàng","我每天早上六点起床。":"wǒ měi tiān zǎo shang liù diǎn qǐ chuáng","张":"zhāng","这是一张照片。":"zhè shì yī zhāng zhào piàn","丈夫":"zhàng fu","这是我的丈夫。":"zhè shì wǒ de zhàng fu","找":"zhǎo","我在找我的钥匙。":"wǒ zài zhǎo wǒ de yào shi","着":"zhe","他在吃着饭呢。":"tā zài chī zhe fàn ne","真":"zhēn","这个苹果真好吃。":"zhè ge píng guǒ zhēn hào chī","正在":"zhèng zài","妈妈正在打电话。":"mā ma zhèng zài dǎ diàn huà","知道":"zhī dào","我知道他是谁。":"wǒ zhī dào tā shì shéi","准备":"zhǔn bèi","我正在准备考试。":"wǒ zhèng zài zhǔn bèi kǎo shì","自行车":"zì xíng chē","他骑自行车去上班。":"tā qí zì xíng chē qù shàng bān","走":"zǒu","我们一起走吧。":"wǒ men yī qǐ zǒu ba","最":"zuì","这是我最喜欢的书。":"zhè shì wǒ zuì xǐ huān de shū","左边":"zuǒ biān","他坐在我左边。":"tā zuò zài wǒ zuǒ biān","词语卡片":"cí yǔ kǎ piàn","选词填空":"xuǎn cí tián kòng","连词成句":"lián cí chéng jù","阅读理解":"yuè dú lǐ jiě","请":"qǐng","你":"nǐ","帮":"bāng","我":"wǒ","他":"tā","的":"de","白色":"bái sè","衬衫":"chèn shān","很漂亮":"hěn piào liàng","我们":"wǒ men","买":"mǎi","一百个":"yì bǎi gè","苹果":"píng guǒ","帮忙":"bāng máng","翻译":"fān yì","这":"zhè","篇文章":"piān wén zhāng","每天":"měi tiān","都":"dōu","看":"kàn","忘带":"wàng dài","钥匙":"yào shi","她":"tā","头发":"tóu fà","很长":"hěn zhǎng","喜欢":"xǐ huān","出去":"chū qù","玩吧":"wán ba","衣服":"yī fú","坐在":"zuò zài","船上":"chuán shàng","是":"shì","第一次":"dì yī cì","来":"lái","这里":"zhè lǐ","工作":"gōng zuò","做":"zuò","了":"le","一个":"yí gè","打得":"dǎ dé","很":"hěn","好":"hǎo","高兴":"gāo xìng","想":"xiǎng","去":"qù","没有":"méi yǒu","今天":"jīn tiān","学校":"xué xiào","努力学习":"nǔ lì xué xí","在":"zài","玩具":"wán jù","第一名":"dì yì míng","不":"bù","这个":"zhè ge","里":"lǐ","安静":"ān jìng","道菜":"dào cài","答案":"dá àn","家里":"jiā lǐ","一":"yī","本书":"běn shū","方便":"fāng biàn","包":"bāo","十公斤":"shí gōng jīn","这件":"zhè jiàn","想要":"xiǎng yào","一杯":"yī bēi","水":"shuǐ","们":"men","手机号":"shǒu jī hào","多少":"duō shǎo","车":"chē","黑色":"hēi sè","红色":"hóng sè","我家":"wǒ jiā","很近":"hěn jìn","吃":"chī","好看":"hǎo kàn","学生":"xué shēng","学习":"xué xí","大":"dà","三岁":"sān suì","一下":"yī xià","自己":"zì jǐ","客气":"kè qì","住":"zhù","热":"rè","喝咖啡":"hē kā fēi","现在":"xiàn zài","上课":"shàng kè","会":"huì","下雨":"xià yǔ","有":"yǒu","三节课":"sān jié kè","跑":"pǎo","很快":"hěn kuài","祝":"zhù","生日快乐":"shēng rì kuài lè","我累":"wǒ lèi","不远":"bù yuǎn","两个":"liǎng gè","这条":"zhè tiáo","商店":"shāng diàn","卖东西":"mài dōng xī","很慢":"hěn màn","每个":"měi gè","人":"rén","机会":"jī huì","站":"zhàn","门口":"mén kǒu","那个":"nà ge","您好":"nín hǎo","喝牛奶":"hē niú nǎi","妈妈":"mā mā","两张":"liǎng zhāng","电影票":"diàn yǐng piào","六点":"liù diǎn","一千块":"yī qiān kuài","钱":"qián","晴天":"qíng tiān","中国":"zhōng guó","进来":"jìn lái","八点":"bā diǎn","怎么样":"zěn me yàng","不能":"bù néng","什么":"shén me","这块":"zhè kuài","没电":"méi diàn","一只":"yī zhī","可爱":"kě ài","小猫":"xiǎo māo","这道题":"zhè dào tí","难":"nán","外面":"wài miàn","小孩子":"xiǎo hái zi","玩游戏":"wán yóu xì","作业":"zuò yè","九点":"jiǔ diǎn","睡觉":"shuì jiào","请问":"qǐng wèn","叫":"jiào","名字":"míng zì","重要":"zhòng yào","能":"néng","新手机":"xīn shǒu jī","需要":"xū yào","明天":"míng tiān","下雪":"xià xuě","很大":"hěn dà","我要":"wǒ yào","吃药":"chī yào","吃过饭":"chī guò fàn","电影吧":"diàn yǐng ba","这是":"zhè shì","阴天":"yīn tiān","晚饭":"wǎn fàn","十元":"shí yuán","他家":"tā jiā","再说":"zài shuō","一遍":"yī biàn","一张":"yī zhāng","照片":"zhào piān","饭":"fàn","呢":"ne","打电话":"dǎ diàn huà","谁":"shuí","骑":"qí","书":"shū"};
+const PYD = {"吧":"ba","请":"qǐng","你":"nǐ","帮":"bāng","我":"wǒ","白":"bái","他":"tā","的":"de","色":"sè","衬":"chèn","衫":"shān","很":"hěn","漂":"piào","亮":"liang","百":"bǎi","们":"men","要":"yào","买":"mǎi","一":"yī","个":"gè","苹":"píng","果":"guǒ","助":"zhù","忙":"máng","翻":"fān","译":"yì","这":"zhè","篇":"piān","文":"wén","章":"zhāng","报":"bào","纸":"zhǐ","每":"měi","天":"tiān","都":"dōu","看":"kàn","比":"bǐ","家":"jiā","大":"dà","别":"bié","忘":"wàng","带":"dài","钥":"yào","匙":"shi","长":"cháng","她":"tā","头":"tóu","发":"fà","唱":"chàng","歌":"gē","喜":"xǐ","欢":"huān","出":"chū","去":"qù","玩":"wán","穿":"chuān","衣":"yī","服":"fú","船":"chuán","坐":"zuò","在":"zài","上":"shàng","次":"cì","是":"shì","第":"dì","来":"lái","里":"lǐ","从":"cóng","早":"zǎo","工":"gōng","作":"zuò","到":"dào","晚":"wǎn","错":"cuò","做":"zuò","了":"le","题":"tí","打":"dǎ","篮":"lán","球":"qiú","得":"de","好":"hǎo","高":"gāo","兴":"xìng","但":"dàn","想":"xiǎng","没":"méi","有":"yǒu","时":"shí","间":"jiān","今":"jīn","学":"xué","校":"xiào","努":"nǔ","力":"lì","习":"xí","等":"děng","弟":"dì","具":"jù","名":"míng","懂":"dǒng","不":"bù","问":"wèn","对":"duì","房":"fáng","安":"ān","静":"jìng","非":"fēi","常":"cháng","道":"dào","菜":"cài","吃":"chī","务":"wù","员":"yuán","告":"gào","诉":"sù","答":"dá","案":"àn","哥":"gē","给":"gěi","本":"běn","书":"shū","公":"gōng","共":"gòng","汽":"qì","车":"chē","方":"fāng","便":"pián","斤":"jīn","包":"bāo","十":"shí","司":"sī","贵":"guì","件":"jiàn","过":"guò","检":"jiǎn","门":"mén","还":"hái","杯":"bēi","水":"shuǐ","孩":"hái","子":"zi","号":"hào","手":"shǒu","机":"jī","多":"duō","少":"shǎo","黑":"hēi","红":"hóng","迎":"yíng","回":"huí","场":"chǎng","离":"lí","近":"jìn","鸡":"jī","蛋":"dàn","教":"jiào","室":"shì","生":"shēng","姐":"jiě","三":"sān","岁":"suì","介":"jiè","绍":"shào","下":"xià","自":"zì","己":"jǐ","进":"jìn","客":"kè","气":"qì","就":"jiù","住":"zhù","旁":"páng","边":"biān","觉":"jué","热":"rè","咖":"kā","啡":"fēi","喝":"hē","开":"kāi","始":"shǐ","现":"xiàn","课":"kè","考":"kǎo","试":"shì","准":"zhǔn","备":"bèi","可":"kě","能":"néng","会":"huì","雨":"yǔ","以":"yǐ","节":"jié","快":"kuài","跑":"pǎo","乐":"lè","祝":"zhù","日":"rì","累":"lèi","休":"xiū","息":"xī","远":"yuǎn","两":"liǎng","路":"lù","条":"tiáo","旅":"lǚ","游":"yóu","卖":"mài","商":"shāng","店":"diàn","东":"dōng","西":"xī","慢":"màn","走":"zǒu","人":"rén","妹":"mèi","站":"zhàn","口":"kǒu","男":"nán","那":"nà","您":"nín","牛":"niú","奶":"nǎi","女":"nǚ","妈":"mā","步":"bù","宜":"yí","票":"piào","张":"zhāng","电":"diàn","影":"yǐng","妻":"qī","起":"qǐ","床":"chuáng","六":"liù","点":"diǎn","千":"qiān","块":"kuài","钱":"qián","晴":"qíng","年":"nián","中":"zhōng","国":"guó","让":"ràng","班":"bān","八":"bā","身":"shēn","体":"tǐ","怎":"zěn","么":"me","样":"yàng","病":"bìng","事":"shì","情":"qíng","什":"shén","表":"biǎo","送":"sòng","所":"suǒ","它":"tā","只":"zhī","爱":"ài","小":"xiǎo","猫":"māo","踢":"tī","足":"zú","难":"nán","跳":"tiào","舞":"wǔ","外":"wài","面":"miàn","戏":"xì","完":"wán","已":"yǐ","经":"jīng","业":"yè","九":"jiǔ","睡":"shuì","为":"wèi","叫":"jiào","字":"zì","重":"zhòng","瓜":"guā","希":"xī","望":"wàng","洗":"xǐ","向":"xiàng","左":"zuǒ","笑":"xiào","新":"xīn","姓":"xìng","需":"xū","雪":"xuě","明":"míng","颜":"yán","眼":"yǎn","睛":"jing","羊":"yáng","肉":"ròu","药":"yào","也":"yě","泳":"yǒng","饭":"fàn","意":"yì","思":"si","阴":"yīn","因":"yīn","右":"yòu","鱼":"yú","元":"yuán","运":"yùn","动":"dòng","再":"zài","说":"shuō","遍":"biàn","照":"zhào","片":"piàn","丈":"zhàng","夫":"fu","找":"zhǎo","着":"zhe","呢":"ne","真":"zhēn","正":"zhèng","话":"huà","知":"zhī","谁":"shéi","行":"xíng","骑":"qí","最":"zuì","词":"cí","语":"yǔ","卡":"kǎ","选":"xuǎn","填":"tián","空":"kòng","连":"lián","成":"chéng","句":"jù","阅":"yuè","读":"dú","理":"lǐ","解":"jiě","早上":"zǎo shang","这个":"zhè ge","哥哥":"gē ge","方便":"fāng biàn","姐姐":"jiě jie","妹妹":"mèi mei","妈妈":"mā ma","睡觉":"shuì jiào"};
+(function(){
+const app=document.getElementById("app"),$=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const HANRE=/[\u4e00-\u9fff]/;
+let MAXL=1;for(const k in PYD)if(k.length>MAXL)MAXL=k.length;
+const rr=(c,p)=>`<ruby>${c}<rt>${esc(p)}</rt></ruby>`;
+function rbSy(text,sy){let k=0,o="";for(const c of text){if(HANRE.test(c)){o+=sy[k]?rr(c,sy[k]):esc(c);k++}else o+=esc(c)}return o}
+function rb(text){text=text==null?"":String(text);if(!HANRE.test(text))return esc(text);
+  const ex=PYS[text];if(ex)return rbSy(text,ex.split(" "));
+  let o="",i=0;while(i<text.length){const c=text[i];
+    if(!HANRE.test(c)){o+=esc(c);i++;continue}
+    let hit=0;for(let L=Math.min(MAXL,text.length-i);L>=1;L--){const t=text.substr(i,L),p=PYD[t];if(p){o+=rbSy(t,p.split(" "));i+=L;hit=1;break}}
+    if(!hit){o+=esc(c);i++}}
+  return o}
+function rbCtx(text,ctx,from){const sy=PYS[ctx];if(!sy||!HANRE.test(text))return rb(text);
+  const p=ctx.indexOf(text,from||0);if(p<0)return rb(text);
+  let k=0;for(let i=0;i<p;i++)if(HANRE.test(ctx[i]))k++;
+  let n=0;for(const c of text)if(HANRE.test(c))n++;
+  return rbSy(text,sy.split(" ").slice(k,k+n))}
+
+const P="hsk"+LV.lv+"_";
+const load=(k,d)=>{try{const r=localStorage.getItem(k);return r?Object.assign(d,JSON.parse(r)):d}catch(e){return d}};
+const store=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const G=load("hsk_global",{hidePy:false}),LRN=load(P+"learned",{});
+const canSpeak="speechSynthesis" in window;
+function applyPy(){document.body.classList.toggle("hide-py",G.hidePy);const b=$("#togPy");b.setAttribute("aria-pressed",G.hidePy);b.textContent=G.hidePy?"Hiện pinyin":"Ẩn pinyin"}
+$("#togPy").onclick=()=>{G.hidePy=!G.hidePy;store("hsk_global",G);applyPy()};applyPy();
+function speak(t){if(!canSpeak)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="zh-CN";u.rate=.85;const vs=speechSynthesis.getVoices();const v=vs.find(v=>/zh[-_]CN/i.test(v.lang))||vs.find(v=>/^zh/i.test(v.lang));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
+if(canSpeak)speechSynthesis.getVoices();
+const sp=t=>canSpeak?`<button class="speak" data-say="${esc(t)}" aria-label="Nghe đọc">🔊</button>`:"";
+const spf=t=>canSpeak?`<button class="speak sp" data-say="${esc(t)}" aria-label="Nghe đọc">🔊</button>`:"";
+const norm=s=>(s||"").replace(/[\s\u3000，。！？、；：“”‘’"'（）()《》…—\-,.!?;:~·]/g,"");
+const fold=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d").replace(/Đ/g,"D").toLowerCase();
+function lcs(a,b){const n=a.length,m=b.length,d=Array.from({length:n+1},()=>new Uint16Array(m+1));
+  for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)d[i][j]=a[i]===b[j]?d[i+1][j+1]+1:Math.max(d[i+1][j],d[i][j+1]);
+  const ka=new Array(n).fill(false),kb=new Array(m).fill(false);let i=0,j=0;
+  while(i<n&&j<m){if(a[i]===b[j]){ka[i]=kb[j]=true;i++;j++}else if(d[i+1][j]>=d[i][j+1])i++;else j++}
+  return {len:d[0][0],ka,kb}}
+function grade(user,ans){const a=[...norm(user)],b=[...norm(ans)];if(!a.length)return {level:"no",pct:0,blank:true};
+  const r=lcs(a,b),pct=Math.round(200*r.len/(a.length+b.length)),level=pct===100?"ok":pct>=80?"near":"no";
+  return {level,pct,ua:a.map((c,i)=>r.ka[i]?esc(c):`<span class="x">${esc(c)}</span>`).join(""),ub:b.map((c,j)=>r.kb[j]?esc(c):`<span class="m">${esc(c)}</span>`).join("")}}
+const rng=sd=>()=>{sd=(sd*9301+49297)%233280;return sd/233280};
+const shuf=(arr,sd)=>{const a=arr.slice(),r=rng(sd);for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const NL=LV.ls.length-1;
+const lessonOf=g=>{let lo=0,hi=NL-1;while(lo<hi){const m=(lo+hi+1)>>1;if(LV.ls[m]<=g)lo=m;else hi=m-1}return lo+1};
+const rangeTxt=n=>{const a=LV.words[LV.ls[n-1]][0],b=LV.words[LV.ls[n]-1][0];return a+" … "+b};
+const rangeHtml=n=>rb(LV.words[LV.ls[n-1]][0])+" … "+rb(LV.words[LV.ls[n]-1][0]);
+const learnedIn=n=>{let c=0;for(let g=LV.ls[n-1];g<LV.ls[n];g++)if(LRN[g])c++;return c};
+let FOLD=null;
+
+function home(){
+  let done=0;const total=LV.words.length;for(const k in LRN)if(LRN[k])done++;
+  const rows=[];for(let n=1;n<=NL;n++){const size=LV.ls[n]-LV.ls[n-1],lc=learnedIn(n),T=load(P+"t_"+n,{sub:false}),S=load(P+"s_"+n,{subS:false});
+    const chips=(lc?`<span class="chip ${lc===size?"ok":"part"}">${lc}/${size} đã thuộc</span>`:"")+(T.sub&&T.total?` <span class="chip ok">Kiểm tra ${T.score}/${T.total}</span>`:"")+(!lc&&!T.sub?`<span class="chip">Chưa học</span>`:"");
+    rows.push(`<li><a class="row" href="#/bai/${n}"><span class="num">${n}</span><span class="rt"><div class="z">${rangeHtml(n)}</div><div class="v">${size} từ mới</div></span><span>${chips}</span></a></li>`)}
+  app.innerHTML=`<h1>HSK ${LV.lv}</h1><p class="muted" style="margin:0">Mỗi bài có danh sách từ mới kèm pinyin, thẻ ôn, luyện dịch câu ví dụ và bài kiểm tra. Chữ Hán đều có pinyin phía trên.</p>
+    <div class="sum"><div><b>${total}</b><span>từ vựng</span></div><div><b>${NL}</b><span>bài</span></div><div><b>${done}</b><span>từ đã thuộc</span></div></div>
+    <input class="search" id="q" type="search" placeholder="Tra từ: chữ Hán, pinyin hoặc nghĩa tiếng Việt (gõ không dấu cũng được)" aria-label="Tra từ">
+    <div id="sres"></div><ul class="list">${rows.join("")}</ul>`;
+  document.title="HSK "+LV.lv+" – Học từ vựng tiếng Trung";window.scrollTo(0,0);
+  $("#q").oninput=e=>{const q=fold(e.target.value.trim()),box=$("#sres");if(!q){box.innerHTML="";return}
+    if(!FOLD)FOLD=LV.words.map(w=>fold(w[0]+" "+w[1]+" "+w[2]+" "+w[3]));
+    const hits=[];for(let i=0;i<FOLD.length&&hits.length<40;i++)if(FOLD[i].includes(q))hits.push(i);
+    box.innerHTML=hits.length?`<div class="sres">${hits.map(g=>{const w=LV.words[g];return `<a class="sr" href="#/bai/${lessonOf(g)}"><span class="z">${rb(w[0])}</span><span><span class="y">${esc(w[1])}</span><div class="v">${esc(w[3])}</div></span><span class="b">Bài ${lessonOf(g)}</span></a>`}).join("")}</div>`:`<p class="muted">Không tìm thấy từ nào.</p>`}}
+
+function lesson(no){
+  if(!(no>=1&&no<=NL))return location.hash="#/";
+  const lo=LV.ls[no-1],W=LV.words.slice(lo,LV.ls[no]),SEL=LV.sel[no-1];
+  const KS=P+"s_"+no,KT=P+"t_"+no;
+  const S=load(KS,{ans:{},subS:false}),S2=load(KT,{fc:{},fi:{},od:{},sub:false,flip:{}});
+  let tab="n",openAll=false,warned={s:false,t:false};const OPEN={};
+  const LT="ABCDEF";
+  const head=`<div class="crumb"><a href="#/">← Danh sách bài</a></div><div class="head"><div style="color:var(--crimson);font-weight:600">HSK ${LV.lv} · Bài ${no}</div><h1>${rangeHtml(no)}</h1><p class="vt">${W.length} từ mới</p></div>
+    <div class="tabs" role="tablist">${[["n","Từ mới"],["w","Ôn thẻ"],["s","Dịch câu"],["t","Kiểm tra"]].map(t=>`<button class="tab" role="tab" data-t="${t[0]}" aria-selected="${t[0]===tab}">${t[1]}</button>`).join("")}</div>`;
+  const pn=`<div class="pn">${no>1?`<a href="#/bai/${no-1}">← Bài ${no-1}</a>`:"<span></span>"}${no<NL?`<a href="#/bai/${no+1}">Bài ${no+1} →</a>`:"<span></span>"}</div>`;
+
+  function words(){const done=W.filter((_,i)=>LRN[lo+i]).length;
+    const cards=W.map((w,i)=>{const g=lo+i,open=openAll||OPEN[i],got=!!LRN[g];
+      const face=open?`<div class="wb"><div class="hz">${rb(w[0])}</div><div class="bpy">${esc(w[1])}</div>${w[2]?`<div class="bhv">Hán Việt: ${esc(w[2])}</div>`:""}<div class="bvi">${esc(w[3])}</div>
+        <div class="bex">${rb(w[4])}${sp(w[4])}</div><div class="y">${esc(w[5])}</div><div class="bexv">${esc(w[6])}</div>
+        <div class="wact"><button class="btn" data-flip="${i}">Úp lại</button><button class="btn ${got?"on":""}" data-got="${g}">${got?"Đã thuộc ✓":"Đánh dấu đã thuộc"}</button></div></div>`
+        :`<button class="wf" data-flip="${i}" aria-label="Lật thẻ ${esc(w[0])}"><span class="hz">${rb(w[0])}</span><small>Bấm để lật</small></button>${spf(w[0])}`;
+      return `<div class="wc ${got?"got":""}"><span class="wn">${i+1}</span>${face}</div>`}).join("");
+    return `<div class="tools"><span class="muted" id="cnt">Đã thuộc ${done}/${W.length} từ</span><button class="btn" id="flipAll">${openAll?"Úp tất cả":"Mở tất cả"}</button></div><div class="wgrid">${cards}</div>`}
+
+  function newWords(){const done=W.filter((_,i)=>LRN[lo+i]).length;
+    return `<div class="tools"><span class="muted" id="cnt">${W.length} từ mới · đã thuộc ${done}/${W.length}</span></div><div class="nwlist">${W.map((w,i)=>{const g=lo+i,got=!!LRN[g];
+      return `<div class="nw ${got?"got":""}"><div><div class="nwh"><span class="n">${i+1}</span>${rb(w[0])}${sp(w[0])}</div><div class="y">${esc(w[1])}</div>${w[2]?`<div class="bhv">Hán Việt: ${esc(w[2])}</div>`:""}</div><div><div class="bvi">${esc(w[3])}</div><div class="bex">${rb(w[4])}${sp(w[4])}</div><div class="y">${esc(w[5])}</div><div class="bexv">${esc(w[6])}</div></div><button class="btn ${got?"on":""}" data-got="${g}">${got?"Đã thuộc ✓":"Đã thuộc?"}</button></div>`}).join("")}</div>`}
+  function sent(){const sub=S.subS;let ok=0,near=0;
+    const items=SEL.tr.map((wi,k)=>{const w=W[wi];let res="",cls="";
+      if(sub){const g=grade(S.ans[k],w[4]);cls=g.level;if(g.level==="ok")ok++;else if(g.level==="near")near++;
+        const lb=g.blank?"Chưa làm":g.level==="ok"?"Khớp đáp án":g.level==="near"?"Gần đúng":"Chưa đúng";
+        res=`<div class="res"><span class="badge ${g.level}">${lb}${g.blank?"":" "+g.pct+"%"}</span>
+          ${(!g.blank&&g.level!=="ok")?`<div class="cmp">Bài của bạn (gạch ngang là chữ thừa hoặc sai):<div class="line">${g.ua}</div>Đáp án (tô đậm là chữ bạn còn thiếu):<div class="line">${g.ub}</div></div>`:""}
+          <div class="answer"><div class="ans-zh">${rb(w[4])}${sp(w[4])}</div><div class="ans-py">${esc(w[5])}</div><div class="ans-note"><b>Từ mới:</b> ${rb(w[0])} (${esc(w[1])}): ${esc(w[3])}</div></div></div>`}
+      return `<li class="item ${cls}"><div class="vs"><span class="n">${k+1}</span>${esc(w[6])}</div><div class="hint2">Từ mới cần dùng: <b>${rb(w[0])}</b></div>
+        <textarea data-i="${k}" rows="2" ${sub?"disabled":""} placeholder="Viết câu tiếng Trung của bạn vào đây…" aria-label="Dịch câu ${k+1}">${esc(S.ans[k]||"")}</textarea>${res}</li>`}).join("");
+    const left=SEL.tr.filter((_,k)=>!norm(S.ans[k]).length).length;
+    const box=sub?`<div class="sbox"><h2>Kết quả dịch câu</h2><div class="score"><div><b>${ok}/${SEL.tr.length}</b><span>khớp đáp án</span></div><div><b>${near}</b><span>gần đúng</span></div></div>
+      <p class="muted">Máy chấm bằng cách so từng chữ với câu ví dụ. Câu "gần đúng" hoặc "chưa đúng" có thể vẫn là một cách dịch hợp lệ.</p><button class="btn" id="redoS">Làm lại phần này</button></div>`
+      :`<div class="sbox"><h2>Nộp bài dịch</h2><p class="${warned.s?"warn":"muted"}">${warned.s?`Còn ${left} câu chưa làm. Nộp rồi sẽ không sửa được.`:"Dịch câu tiếng Việt sang tiếng Trung, dùng từ mới được gợi ý. Đáp án hiện ra sau khi nộp."}</p><button class="btn primary" id="subS">${warned.s?"Vẫn nộp bài":"Nộp bài và xem đáp án"}</button></div>`;
+    return `<ol class="items">${items}</ol>${box}`}
+
+  // ---- kiểm tra ----
+  const FC=SEL.fc.map((wi,i)=>{const c=W[wi],pool=[...new Set(W.filter((_,j)=>j!==wi).map(x=>x[3]).filter(m=>m!==c[3]))];
+    const opts=shuf([c[3],...shuf(pool,no*100+i).slice(0,3)],no*7+i*13);return {w:c,opts,a:opts.indexOf(c[3])}});
+  const FIG=[];for(let s=0;s<SEL.fi.length;s+=5){const ids=SEL.fi.slice(s,s+5);
+    const dis=shuf(W.map((_,j)=>j).filter(j=>!ids.includes(j)&&!ids.some(i=>W[i][7]===W[j][0])),no*50+s)[0];
+    const items=ids.map(i=>({t:W[i][7],w:W[i],ans:i,from:W[i][4].indexOf(W[i][7])}));
+    if(dis!==undefined)items.push({t:W[dis][0],w:W[dis],ans:-1,from:-1});
+    const bank=shuf(items,no*11+s);
+    FIG.push({bank,q:ids.map(i=>{const w=W[i];return {w,a:bank.findIndex(b=>b.ans===i),idx:w[4].indexOf(w[7])}})})}
+  const OD=SEL.od.map((wi,i)=>{const w=W[wi],ez=w[4];let ps=0;const items=w[8].map(t=>{const s=ez.indexOf(t,ps);ps=s+t.length;return {t,s}});
+    const same=a=>a.map(x=>x.t).join("")===w[8].join("");let p=shuf(items,no*31+i*17),k=1;while(same(p)&&k<20){p=shuf(items,no*31+i*17+k);k++}
+    return {w,chunks:w[8],pool:p.map((x,id)=>({t:x.t,s:x.s,id}))}});
+  const nFI=FIG.reduce((a,g)=>a+g.q.length,0),TOTAL=FC.length+nFI+OD.length;
+  const filledT=()=>Object.keys(S2.fc).length+Object.keys(S2.fi).length+Object.values(S2.od).filter(a=>a&&a.length).length;
+  const odText=i=>(S2.od[i]||[]).map(id=>OD[i].pool[id].t).join("");
+  const odOk=i=>{const u=norm(odText(i));return u.length>0&&norm(OD[i].chunks.join(""))===u};
+  function test(){
+    const sub=S2.sub,sc={fc:0,fi:0,od:0};
+    const st=(p,i,a)=>sub?(i===a?"right":p===i?"wrong":""):"";
+    const ob=(at,lab,p,i,a)=>`<button class="topt ${st(p,i,a)}" ${at} aria-pressed="${!sub&&p===i}" ${sub?"disabled":""}>${lab}</button>`;
+    const vd=(ok,p)=>ok?"Chính xác.":p===undefined?"Chưa làm.":"Chưa đúng.";
+    const cards=FC.map((f,i)=>{const p=S2.fc[i],ok=p===f.a;if(sub&&ok)sc.fc++;const fl=sub&&S2.flip[i],c=f.w;
+      const face=fl?`<div class="face back"><div class="hz sm">${rb(c[0])}${sp(c[4])}</div><div class="bpy">${esc(c[1])}</div><div class="bvi">${esc(c[3])}</div><div class="bex">${rb(c[4])}</div><div class="bexv">${esc(c[6])}</div></div>`
+        :`<div class="face"><span class="n">${i+1}</span><div class="hz">${rb(c[0])}${sp(c[0])}</div></div>`;
+      const opts=fl?"":`<div class="copts">${f.opts.map((o,oi)=>ob(`data-t="fc" data-q="${i}" data-o="${oi}"`,esc(o),p,oi,f.a)).join("")}</div>`;
+      return `<div class="card ${sub?(ok?"ok":"bad"):""}">${face}${opts}${sub?`<button class="btn flip" data-flip2="${i}">${fl?"Lật lại":"Lật thẻ"}</button>`:""}</div>`}).join("");
+    let qn=0;
+    const bk=b=>b.from>=0?rbCtx(b.t,b.w[4],b.from):rb(b.t);
+    const fills=FIG.map((g,gi)=>{const bank=`<div class="bank">${g.bank.map((b,wi)=>`<span><b>${LT[wi]}</b>${bk(b)}</span>`).join("")}</div>`;
+      const qs=g.q.map((q,qi)=>{const k=gi+"_"+qi,p=S2.fi[k],ok=p===q.a;if(sub&&ok)sc.fi++;qn++;const ez=q.w[4],fm=q.w[7];
+        const fb=sub?`<div class="fb ${ok?"ok":"no"}"><b>${vd(ok,p)}</b> Đáp án: <b>${LT[q.a]} ${bk(g.bank[q.a])}</b><div class="full">${rb(ez)}${sp(ez)}</div><div class="y">${esc(q.w[5])}</div><div>${esc(q.w[6])}</div></div>`:"";
+        return `<div class="mc"><div class="mc-q"><span class="n">${qn}.</span>${rbCtx(ez.slice(0,q.idx),ez,0)}<span class="blank"></span>${rbCtx(ez.slice(q.idx+fm.length),ez,q.idx+fm.length)}</div><div class="opts">${g.bank.map((b,wi)=>ob(`data-t="fi" data-q="${k}" data-o="${wi}"`,`<b class="lt">${LT[wi]}</b>${bk(b)}`,p,wi,q.a)).join("")}</div>${fb}</div>`}).join("");
+      return bank+qs}).join("");
+    const ords=OD.map((o,i)=>{const pk=S2.od[i]||[],ok=odOk(i),ez=o.w[4];if(sub&&ok)sc.od++;
+      const pb=id=>`<button class="pc" data-od="${i}" data-id="${id}" ${sub?"disabled":""}>${rbCtx(o.pool[id].t,ez,o.pool[id].s)}</button>`;
+      const fb=sub?`<div class="fb ${ok?"ok":"no"}"><b>${ok?"Chính xác.":pk.length?"Chưa đúng.":"Chưa làm."}</b><div class="full">${rb(ez)}${sp(ez)}</div><div class="y">${esc(o.w[5])}</div><div>${esc(o.w[6])}</div></div>`:"";
+      return `<div class="mc"><div class="mc-q"><span class="n">${i+1}.</span><span style="font-family:var(--vi);font-weight:500;font-size:16px">Sắp xếp thành câu hoàn chỉnh</span></div><div class="ansline ${sub?(ok?"right":"wrong"):""}">${pk.map(pb).join("")}</div><div class="pool">${o.pool.filter(c=>!pk.includes(c.id)).map(c=>pb(c.id)).join("")}</div>${fb}</div>`}).join("");
+    const tot=sc.fc+sc.fi+sc.od,left=TOTAL-filledT();
+    if(sub&&(S2.score!==tot||S2.total!==TOTAL)){S2.score=tot;S2.total=TOTAL;store(KT,S2)}
+    const box=sub?`<div class="sbox" id="tres"><h2>Kết quả bài kiểm tra</h2><div class="score"><div><b>${tot}/${TOTAL}</b><span>tổng số câu đúng</span></div><div><b>${sc.fc}/${FC.length}</b><span>thẻ từ</span></div><div><b>${sc.fi}/${nFI}</b><span>điền từ</span></div><div><b>${sc.od}/${OD.length}</b><span>sắp xếp câu</span></div></div><p class="muted">Bấm "Lật thẻ" ở phần thẻ từ để xem lại phiên âm và câu ví dụ. Phần sắp xếp chấm theo đúng câu ví dụ, nên một số câu có thể còn cách sắp xếp khác vẫn đúng ngữ pháp.</p><button class="btn" id="redoT">Làm lại bài kiểm tra</button></div>`
+      :`<div class="sbox" id="tres"><h2>Nộp bài kiểm tra</h2><p id="tinfo" class="${warned.t?"warn":"muted"}">${warned.t?`Còn ${left} câu chưa làm. Nộp rồi sẽ không sửa được.`:`Đã làm ${filledT()}/${TOTAL} câu.`}</p><button class="btn primary" id="subT">${warned.t?"Vẫn nộp bài":"Nộp bài kiểm tra"}</button></div>`;
+    const sec=(n,t,z,h)=>`<h2 class="sh">Phần ${n} – ${t} <span class="zhs">${rb(z)}</span></h2><p class="hint">${h}</p>`;
+    return `<p class="muted" style="margin-top:0">Gồm ${TOTAL} câu lấy từ các từ mới của bài này. Bài được lưu tự động, đáp án hiện ra sau khi nộp.</p>
+      ${sec(1,`Thẻ từ (${FC.length} câu)`,"词语卡片","Nhìn chữ Hán, chọn nghĩa đúng.")}<div class="cards">${cards}</div>
+      ${sec(2,`Điền từ (${nFI} câu)`,"选词填空","Chọn từ trong khung để điền vào chỗ trống. Mỗi nhóm có một từ không dùng đến.")}${fills}
+      ${sec(3,`Sắp xếp câu (${OD.length} câu)`,"连词成句","Bấm các mảnh theo đúng thứ tự để ghép thành câu. Bấm vào mảnh ở dòng trả lời để gỡ ra.")}${ords}
+      ${box}`}
+  const updT=()=>{const p=$("#tinfo");if(p&&!S2.sub){warned.t=false;p.className="muted";p.textContent=`Đã làm ${filledT()}/${TOTAL} câu.`;const b=$("#subT");if(b)b.textContent="Nộp bài kiểm tra"}};
+
+  function draw(keep){
+    app.innerHTML=head+(tab==="n"?newWords():tab==="w"?words():tab==="s"?sent():test())+pn;
+    app.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.t===tab));
+    document.title=`HSK ${LV.lv} – Bài ${no} · ${rangeTxt(no)}`;
+    if(!keep)window.scrollTo(0,0);
+    const on=(id,fn)=>{const e=$(id);if(e)e.onclick=fn};
+    app.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{tab=b.dataset.t;draw()});
+    app.querySelectorAll("[data-say]").forEach(b=>b.onclick=()=>speak(b.dataset.say));
+    app.querySelectorAll("[data-flip]").forEach(b=>b.onclick=()=>{const i=b.dataset.flip;OPEN[i]=!OPEN[i];if(openAll){openAll=false;W.forEach((_,j)=>OPEN[j]=j!=i)}draw(true)});
+    app.querySelectorAll("[data-got]").forEach(b=>b.onclick=()=>{const g=b.dataset.got;if(LRN[g])delete LRN[g];else LRN[g]=1;store(P+"learned",LRN);draw(true)});
+    on("#flipAll",()=>{openAll=!openAll;if(!openAll)W.forEach((_,j)=>OPEN[j]=false);draw(true)});
+    app.querySelectorAll("textarea").forEach(t=>t.oninput=()=>{S.ans[t.dataset.i]=t.value;store(KS,S)});
+    on("#subS",()=>{const left=SEL.tr.filter((_,k)=>!norm(S.ans[k]).length).length;if(left&&!warned.s){warned.s=true;draw(true);return}S.subS=true;store(KS,S);draw()});
+    on("#redoS",()=>{S.subS=false;S.ans={};store(KS,S);warned.s=false;draw()});
+    app.querySelectorAll(".topt:not([disabled])").forEach(b=>b.onclick=()=>{const bag=S2[b.dataset.t],q=b.dataset.q,o=+b.dataset.o;if(bag[q]===o)delete bag[q];else bag[q]=o;store(KT,S2);
+      b.parentNode.querySelectorAll(".topt").forEach(x=>x.setAttribute("aria-pressed",bag[q]===+x.dataset.o));updT()});
+    app.querySelectorAll("[data-od]:not([disabled])").forEach(b=>b.onclick=()=>{const i=b.dataset.od,id=+b.dataset.id,a=(S2.od[i]=S2.od[i]||[]),k=a.indexOf(id);if(k>=0)a.splice(k,1);else a.push(id);store(KT,S2);warned.t=false;draw(true)});
+    app.querySelectorAll("[data-flip2]").forEach(b=>b.onclick=()=>{const i=b.dataset.flip2;S2.flip[i]=!S2.flip[i];store(KT,S2);draw(true)});
+    on("#subT",()=>{if(filledT()<TOTAL&&!warned.t){warned.t=true;draw(true);$("#tres").scrollIntoView({block:"center"});return}S2.sub=true;store(KT,S2);draw(true);$("#tres").scrollIntoView({block:"start"})});
+    on("#redoT",()=>{S2.sub=false;S2.fc={};S2.fi={};S2.od={};S2.flip={};delete S2.score;delete S2.total;store(KT,S2);warned.t=false;draw()});
+  }
+  draw()}
+
+function route(){const m=location.hash.match(/^#\/bai\/(\d+)/);m?lesson(+m[1]):home()}
+addEventListener("hashchange",route);route();
+})();
+</script>
+</body>
+</html>

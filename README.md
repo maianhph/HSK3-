@@ -1,12 +1,13 @@
-# HSK 3 – Học tiếng Trung
+# Học tiếng Trung HSK 1–6
 
-Trang web học tiếng Trung HSK 3 gồm 20 bài. Mỗi bài có 4 phần:
+Website học tiếng Trung, mỗi cấp độ là một file HTML độc lập (mở bằng trình duyệt là chạy, không cần cài đặt). Mọi chữ Hán đều có pinyin phía trên, có nút Ẩn/Hiện pinyin.
 
-1. **Ngữ pháp**: công thức, giải thích, câu ví dụ
-2. **Dịch câu**: dịch Việt → Trung, máy chấm và so sánh từng chữ
-3. **Phân biệt từ**: các cặp từ dễ nhầm, có câu trắc nghiệm
-4. **Kiểm tra 50 câu**: thẻ từ, điền từ, đọc hiểu, sắp xếp câu
+| File | Nội dung |
+|---|---|
+| `index.html` | Trang chủ chọn cấp độ |
+| `hsk1.html`, `hsk2.html`, `hsk4.html`, `hsk5.html`, `hsk6.html` | Từ vựng chia bài 25 từ: Từ mới, Ôn thẻ, Dịch câu, Kiểm tra, tra từ |
+| `hsk3.html` | 20 bài: Từ mới, Ngữ pháp, Dịch câu, Phân biệt từ, Kiểm tra 50 câu |
 
-Một file duy nhất `index.html`, mở bằng trình duyệt là chạy. Tiến độ lưu trong trình duyệt (localStorage). Có ẩn/hiện pinyin và nghe đọc.
+Tiến độ học lưu trong trình duyệt (localStorage). Có nghe đọc (tùy trình duyệt).
 
 Chạy trên GitHub Pages: Settings → Pages → Deploy from a branch → `main` / `(root)`.
